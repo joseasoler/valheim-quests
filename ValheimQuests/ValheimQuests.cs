@@ -1,23 +1,19 @@
-// ValheimQuests
-// a Valheim mod skeleton using Jötunn
-// 
-// File:    ValheimQuests.cs
-// Project: ValheimQuests
-
+using System.Reflection;
 using BepInEx;
 using Jotunn.Entities;
 using Jotunn.Managers;
+using UnityEngine.Assertions;
 
-namespace ValheimQuests
+namespace VQ
 {
-    [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
+    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
     [BepInDependency(Jotunn.Main.ModGuid)]
     //[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
     internal class ValheimQuests : BaseUnityPlugin
     {
-        public const string PluginGUID = "com.jotunn.ValheimQuests";
-        public const string PluginName = "ValheimQuests";
-        public const string PluginVersion = "0.0.1";
+        private const string PluginGuid = "joseasoler.ValheimQuests";
+        private const string PluginName = "ValheimQuests";
+        private const string PluginVersion = "0.0.1";
         
         // Use this class to add your own localization to the game
         // https://valheim-modding.github.io/Jotunn/tutorials/localization.html

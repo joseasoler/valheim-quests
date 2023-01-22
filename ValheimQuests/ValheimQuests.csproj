@@ -7,7 +7,7 @@
     <ProjectGuid>{DEAF4438-8089-40ED-8175-398E1261D45B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ValheimQuests</RootNamespace>
+    <RootNamespace>VQ</RootNamespace>
     <AssemblyName>ValheimQuests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
