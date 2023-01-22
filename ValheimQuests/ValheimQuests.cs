@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Reflection;
 using BepInEx;
 using Jotunn.Entities;
 using Jotunn.Managers;
+using UnityEngine.Assertions;
 
 namespace VQ
 {
@@ -14,17 +16,21 @@ namespace VQ
 		private const string PluginName = "ValheimQuests";
 		private const string PluginVersion = "0.0.1";
 
-		// Use this class to add your own localization to the game
-		// https://valheim-modding.github.io/Jotunn/tutorials/localization.html
 		public static CustomLocalization Localization = LocalizationManager.Instance.GetLocalization();
 
 		private void Awake()
 		{
-			// Jotunn comes with its own Logger class to provide a consistent Log style for all mods using it
-			Jotunn.Logger.LogInfo("ValheimQuests has landed");
+			VersionCheck();
+		}
 
-			// To learn more about Jotunn's features, go to
-			// https://valheim-modding.github.io/Jotunn/tutorials/overview.html
+		[Conditional("DEBUG")]
+		private static void VersionCheck()
+		{
+			var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
+			if (assemblyVersion != PluginVersion)
+			{
+				Jotunn.Logger.LogWarning($"Version mismatch. Plugin: {PluginVersion}, assembly: {assemblyVersion}");
+			}
 		}
 	}
 }
