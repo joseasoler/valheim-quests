@@ -3,13 +3,13 @@ using System.Reflection;
 using BepInEx;
 using Jotunn.Entities;
 using Jotunn.Managers;
-using UnityEngine.Assertions;
+using Jotunn.Utils;
 
 namespace VQ
 {
 	[BepInPlugin(PluginGuid, PluginName, PluginVersion)]
 	[BepInDependency(Jotunn.Main.ModGuid)]
-	//[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
+	[NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Patch)]
 	internal class ValheimQuests : BaseUnityPlugin
 	{
 		private const string PluginGuid = "joseasoler.ValheimQuests";
